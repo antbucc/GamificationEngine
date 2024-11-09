@@ -29,6 +29,7 @@ services:
     env_file: gamification.env
     volumes:
       - ./logs:/app/game-engine.web/logs
+      - /root/gamificationEngine/GamificationEngine:/app/config
   gamification-frontend:
     build:
       context: ./gamification-frontend
@@ -38,5 +39,6 @@ services:
     depends_on:
       - gamification-engine
     env_file: gamification-frontend.env
+
 volumes:
   mongo-data:
